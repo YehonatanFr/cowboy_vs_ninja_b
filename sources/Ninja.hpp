@@ -15,6 +15,10 @@ namespace ariel {
 
         void slash(Character* enemy);
 
+        int getSpeed();
+
+        void setSpeed(int newSpeed);
+
         std::string print() override;
     };
 }

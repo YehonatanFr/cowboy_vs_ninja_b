@@ -9,33 +9,33 @@ namespace ariel {
     Character::Character(std::string name, const Point& location, int hitPoints)
         : name(name), location(location), hitPoints(hitPoints) {}
 
-    // Copy Constructor
-    Character::Character(const Character& other)
-        : name(other.name), location(other.location), hitPoints(other.hitPoints) {}
+    // // Copy Constructor
+    // Character::Character(const Character& other)
+    //     : name(other.name), location(other.location), hitPoints(other.hitPoints) {}
 
-    // Move Constructor
-    Character::Character(Character&& other) noexcept
-        : name(move(other.name)), location(move(other.location)), hitPoints(other.hitPoints) {}
+    // // Move Constructor
+    // Character::Character(Character&& other) noexcept
+    //     : name(move(other.name)), location(move(other.location)), hitPoints(other.hitPoints) {}
 
-    // Copy Assignment operator
-    Character& Character::operator=(const Character& other) {
-        if (this != &other) {
-            name = other.name;
-            location = other.location;
-            hitPoints = other.hitPoints;
-        }
-        return *this;
-    }
+    // // Copy Assignment operator
+    // Character& Character::operator=(const Character& other) {
+    //     if (this != &other) {
+    //         name = other.name;
+    //         location = other.location;
+    //         hitPoints = other.hitPoints;
+    //     }
+    //     return *this;
+    // }
 
-    // Move Assignment operator
-    Character& Character::operator=(Character&& other) noexcept {
-        if (this != &other) {
-            name = move(other.name);
-            location = move(other.location);
-            hitPoints = other.hitPoints;
-        }
-        return *this;
-    }
+    // // Move Assignment operator
+    // Character& Character::operator=(Character&& other) noexcept {
+    //     if (this != &other) {
+    //         name = move(other.name);
+    //         location = move(other.location);
+    //         hitPoints = other.hitPoints;
+    //     }
+    //     return *this;
+    // }
 
     bool Character::isAlive() const {
         return hitPoints > 0;

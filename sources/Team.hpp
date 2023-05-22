@@ -16,13 +16,27 @@ namespace ariel {
         Character* leader;
 
     public:
+        //constructor
         explicit Team(Character* leader);
-        // ~Team();
+        // Copy Constructor
+        Team(const Team& other);
+        // Move Constructor
+        Team(Team&& other) noexcept;
+        // Copy Assignment operator
+        Team& operator=(const Team& other);
+        // Move Assignment operator
+        Team& operator=(Team&& other) noexcept;
 
-        void add(Character* character);
+        //deconstructor
+        virtual ~Team();
+
+        virtual void add(Character* character);
         void attack(Team* enemyTeam);
         int stillAlive();
-        
+        std::vector<Character*> getCharacters();
+        void setCharacters(Character* NewCharacter);
+        void updateLeader();
+
         std::string print();
     };
 }

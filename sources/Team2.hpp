@@ -1,26 +1,26 @@
 #ifndef TEAM2_HPP
 #define TEAM2_HPP
 
+#include "Team.hpp"
 #include "Point.hpp"
 #include "Character.hpp"
 #include <vector>
 #include <string>
 
 namespace ariel {
-    class Team2 {
+    class Team2 : public Team{
     private:
         std::vector<Character*> members;
         Character* leader;
 
     public:
+        //constructor
         explicit Team2(Character* leader);
-        // ~Team2();
+        //deconstructor
+        ~Team2() override;
 
-        void add(Character* character);
-        void attack(Team2* enemyTeam);
-        int stillAlive() const;
+        void add(Character* character) override;
         std::string print();
-        // void destroy();
     };
 }
 

@@ -9,7 +9,6 @@ namespace ariel {
 
         YoungNinja(std::string name, const Point& location);
 
-        std::string print();
     };
 }
 

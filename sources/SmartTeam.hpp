@@ -1,25 +1,27 @@
-// #ifndef SMARTTEAM_HPP
-// #define SMARTTEAM_HPP
+#ifndef SMARTTEAM_HPP
+#define SMARTTEAM_HPP
 
-// #include <vector>
-// #include "Character.hpp"
+#include "Team.hpp"
+#include "Point.hpp"
+#include "Character.hpp"
+#include <vector>
+#include <string>
 
-// namespace ariel {
-//     class SmartTeam {
-//     private:
-//         std::vector<Character*> members;
-//         Character* leader;
+namespace ariel {
+    class SmartTeam : public Team{
+    private:
+        std::vector<Character*> members;
+        Character* leader;
 
-//     public:
-//         explicit SmartTeam(Character* leader);
-//         // ~SmartTeam();
+    public:
+        //constructor
+        explicit SmartTeam(Character* leader);
+        //deconstructor
+        ~SmartTeam() override;
 
-//         void add(Character* character);
-//         void attack(SmartTeam* enemyTeam);
-//         int stillAlive() const;
-//         void print();
-//         void destroy();
-//     };
-// }
+        void add(Character* character) override;
+        std::string print();
+    };
+}
 
-// #endif
+#endif
