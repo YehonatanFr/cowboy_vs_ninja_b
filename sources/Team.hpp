@@ -19,13 +19,13 @@ namespace ariel {
         //constructor
         explicit Team(Character* leader);
         // Copy Constructor
-        Team(const Team& other);
+        Team(const Team& other) = delete;
         // Move Constructor
-        Team(Team&& other) noexcept;
+        Team(Team&& other) noexcept = delete;
         // Copy Assignment operator
-        Team& operator=(const Team& other);
+        Team& operator=(const Team& other) = delete;
         // Move Assignment operator
-        Team& operator=(Team&& other) noexcept;
+        Team& operator=(Team&& other) noexcept = delete;
 
         //deconstructor
         virtual ~Team();
@@ -35,9 +35,9 @@ namespace ariel {
         int stillAlive();
         std::vector<Character*> getCharacters();
         void setCharacters(Character* NewCharacter);
-        void updateLeader();
+        void SetNewLeader();
 
-        std::string print();
+        void print();
     };
 }
 

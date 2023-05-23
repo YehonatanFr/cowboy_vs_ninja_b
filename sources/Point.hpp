@@ -18,7 +18,7 @@ namespace ariel{
 
             double distance(const Point& other);
             
-            Point moveTowards(Point current, Point target, double distance);
+            static Point moveTowards(Point current, Point target, double distance);
             
             double getX() const{
                 return Xco;

@@ -19,6 +19,8 @@ namespace ariel {
 
         void setSpeed(int newSpeed);
 
+        bool isCowboy() override;
+
         std::string print() override;
     };
 }

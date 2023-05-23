@@ -17,10 +17,9 @@ namespace ariel {
         //constructor
         explicit Team2(Character* leader);
         //deconstructor
-        ~Team2() override;
+        // ~Team2() override;
 
         void add(Character* character) override;
-        std::string print();
     };
 }
 

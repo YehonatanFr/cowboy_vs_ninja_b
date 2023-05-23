@@ -9,7 +9,7 @@ namespace ariel {
 
 
     void Cowboy::shoot(Character* enemy) {
-        if (isAlive() && enemy != this && enemy->isAlive() && hasBullets()) {
+        if (isAlive() && enemy != this && enemy->isAlive() && hasboolets()) {
             enemy->hit(10);
             this->bullets--;
         } else {
@@ -26,7 +26,7 @@ namespace ariel {
     }
 
 
-    bool Cowboy::hasBullets(){
+    bool Cowboy::hasboolets(){
         return bullets > 0;
 
     }
@@ -37,6 +37,10 @@ namespace ariel {
         }
         bullets = 6;
     }
+
+    bool Cowboy::isCowboy(){
+        return true;
+    } 
 
     string Cowboy::print(){
         if(this->isAlive()){

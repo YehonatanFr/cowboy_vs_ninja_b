@@ -5,37 +5,11 @@
 using namespace std;
 
 namespace ariel {
+
     // Constructor
     Character::Character(std::string name, const Point& location, int hitPoints)
-        : name(name), location(location), hitPoints(hitPoints) {}
+        : name(name), location(location), hitPoints(hitPoints) ,isPlay(false){}
 
-    // // Copy Constructor
-    // Character::Character(const Character& other)
-    //     : name(other.name), location(other.location), hitPoints(other.hitPoints) {}
-
-    // // Move Constructor
-    // Character::Character(Character&& other) noexcept
-    //     : name(move(other.name)), location(move(other.location)), hitPoints(other.hitPoints) {}
-
-    // // Copy Assignment operator
-    // Character& Character::operator=(const Character& other) {
-    //     if (this != &other) {
-    //         name = other.name;
-    //         location = other.location;
-    //         hitPoints = other.hitPoints;
-    //     }
-    //     return *this;
-    // }
-
-    // // Move Assignment operator
-    // Character& Character::operator=(Character&& other) noexcept {
-    //     if (this != &other) {
-    //         name = move(other.name);
-    //         location = move(other.location);
-    //         hitPoints = other.hitPoints;
-    //     }
-    //     return *this;
-    // }
 
     bool Character::isAlive() const {
         return hitPoints > 0;
@@ -72,12 +46,16 @@ namespace ariel {
         this->hitPoints = hits;
     }
 
-    bool Character::play()const{
+    bool Character::getPlay()const{
         return this->isPlay;
     }
     
-    void Character::setPlay(bool is_Play){
-        this->isPlay = is_Play;
+    void Character::setPlay(){
+        this->isPlay = true;
+    }
+
+    bool Character::compare(Character* character1, Character* character2){
+        return character1->isCowboy() && ! character2->isCowboy();
     }
 
     string Character::print() {

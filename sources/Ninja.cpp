@@ -59,6 +59,10 @@ namespace ariel {
         this->speed = newSpeed;
     }
 
+    bool Ninja::isCowboy(){
+        return false;
+    } 
+
     string Ninja::print() {
         if(this->isAlive()){
             return " N " + Character::print();

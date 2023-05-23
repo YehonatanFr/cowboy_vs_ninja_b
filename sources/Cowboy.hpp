@@ -14,9 +14,11 @@ namespace ariel {
 
         void shoot(Character* enemy);
 
-        bool hasBullets() ;
+        bool hasboolets() ;
 
         void reload();
+
+        bool isCowboy() override;
 
         std::string print() override;
     };

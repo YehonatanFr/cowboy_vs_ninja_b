@@ -17,10 +17,10 @@ namespace ariel {
         //constructor
         explicit SmartTeam(Character* leader);
         //deconstructor
-        ~SmartTeam() override;
+        // ~SmartTeam() override;
 
-        void add(Character* character) override;
-        std::string print();
+        // void add(Character* character) override;
+        // std::string print();
     };
 }
 

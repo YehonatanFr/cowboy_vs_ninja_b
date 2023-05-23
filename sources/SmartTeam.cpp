@@ -8,9 +8,9 @@ namespace ariel{
     : Team(leader) {}
 
 
-    void SmartTeam::add(Character* character) {
-        members.push_back(character);
-    }
+    // void SmartTeam::add(Character* character) {
+    //     members.push_back(character);
+    // }
 
     // int Team2::stillAlive() const {
     //     int count = 0;
