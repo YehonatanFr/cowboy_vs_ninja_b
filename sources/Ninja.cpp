@@ -43,11 +43,29 @@ namespace ariel {
                 throw runtime_error("Cannot slash oneself");
             } else if (!enemy->isAlive()) {
                 throw runtime_error("Cannot slash a dead enemy");
-            } else if (distance(enemy) >= 1) {
-                throw runtime_error("Enemy is out of range for slashing");
             }
+            // } else if (distance(enemy) > 1) {
+            //     throw runtime_error("Enemy is out of range for slashing");
+            // }
         }
     }
+
+    // void Ninja::slash(Character* enemy) {
+    //     if (!isAlive()) {
+    //         throw runtime_error("Cannot slash when dead");
+    //     }
+    //     if (enemy == nullptr || enemy == this) {
+    //         throw runtime_error("Invalid enemy");
+    //     }
+    //     if (!enemy->isAlive()) {
+    //         throw runtime_error("Cannot slash a dead enemy");
+    //     }
+    //     // if (this->distance(enemy) > 1) {
+    //     //     throw runtime_error("Enemy is out of range for slashing");
+    //     // }
+        
+    //     enemy->hit(40);
+    // }
 
 
     int Ninja::getSpeed(){

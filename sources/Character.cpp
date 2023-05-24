@@ -20,6 +20,9 @@ namespace ariel {
     }
 
     void Character::hit(int damage) {
+        if(damage < 0)
+            throw invalid_argument (" Cant get a negative ");
+
         hitPoints -= damage;
         if (hitPoints < 0) {
             hitPoints = 0;

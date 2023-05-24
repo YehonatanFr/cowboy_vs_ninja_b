@@ -45,7 +45,60 @@ namespace ariel{
         sort(members.begin(), members.end() , &Character::compare);
     }
 
-    void Team::attack(Team* enemyTeam){}
+    void Team::attack(Team* enemyTeam) {
+        if (enemyTeam == nullptr) {
+            throw std::invalid_argument("Enemy team cannot be null");
+        }
+
+        if (enemyTeam->stillAlive() == 0) {
+            throw std::runtime_error("Attacking a dead team should throw an exception");
+        }
+
+        SetNewLeader();
+        Character* target = nullptr;
+
+        for (Character* c : enemyTeam->getCharacters()) {
+            if (c->isAlive() && (target == nullptr || c->distance(this->leader) < target->distance(this->leader))) {
+                target = c;
+            }
+        }
+
+        for (Character* attacker : this->getCharacters()) {
+            if (attacker->isAlive() && target->isAlive()) {
+                Cowboy* cowboy = dynamic_cast<Cowboy*>(attacker);
+                Ninja* ninja = dynamic_cast<Ninja*>(attacker);
+
+                if (cowboy != nullptr) {
+                    if (cowboy->hasboolets()) {
+                        cowboy->shoot(target);
+                    } else {
+                        cowboy->reload();
+                    }
+                } else if (ninja != nullptr) {
+                    if (ninja->distance(target) < 1) {
+                        ninja->slash(target);
+                    } else {
+                        ninja->move(target);
+                    }
+                }
+            }
+
+            if (this->stillAlive() == 0 || enemyTeam->stillAlive() == 0) {
+                return;
+            }
+
+            if (!target->isAlive()) {
+                target = nullptr;
+
+                for (Character* c : enemyTeam->getCharacters()) {
+                    if (c->isAlive() && (target == nullptr || c->distance(this->leader) < target->distance(this->leader))) {
+                        target = c;
+                    }
+                }
+            }
+        }
+    }
+
 
     int Team::stillAlive()
     {
@@ -61,7 +114,7 @@ namespace ariel{
         return this->members;
     }
 
-    void Team::setCharacters(ariel::Character* NewCharacter){
+    void Team::setCharacters(Character* NewCharacter){
         this->members.push_back(NewCharacter);
     }
 

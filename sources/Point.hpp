@@ -29,12 +29,12 @@ namespace ariel{
             }
 
 
-            void setX(double x){
-                Xco = x;
+            void setX(double Newx){
+                Xco = Newx;
             }
 
-            void setY(double y){
-                Yco = y;
+            void setY(double Newy){
+                Yco = Newy;
             }
 
             bool operator==(const Point& other) const;

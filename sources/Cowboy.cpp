@@ -19,8 +19,6 @@ namespace ariel {
                 throw runtime_error("Cannot shoot oneself");
             } else if (!enemy->isAlive()) {
                 throw runtime_error("Cannot shoot a dead enemy");
-            } else if (bullets == 0) {
-                throw runtime_error("No bullets remaining");
             }
         }
     }
